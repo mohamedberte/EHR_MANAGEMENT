@@ -1,0 +1,147 @@
+.main {
+    margin-top: 1%;
+}
+
+#table-wrapper {
+  position:relative;
+}
+#table-scroll {
+  height:150px;
+  overflow:auto;  
+  margin-top:20px;
+}
+
+.information-pool{
+  position: relative;
+  display: flex;
+  flex-direction:column;
+  align-items: left;
+  background-color: gainsboro;
+  color: black;
+  width: 100%;
+  padding: 1%;
+  margin-bottom: 10px;
+}
+.information-pool > .row{
+  margin-top: 10px ;
+  margin-bottom: 10px;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding: 35%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content > h5, form, span{
+  margin: 2%;
+}
+
+/* Modal Content */
+.create_schema_form {
+  background-color: #fefefe;
+  margin: auto;
+  margin: 20%;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close, .at_requested_close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .at_requested_close:hover, .at_requested_close:focus
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.title-schema{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background-color: gainsboro;
+  padding: 5%;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  margin-bottom: 3%;
+}
+
+#btn-reject{
+  background-color: rosybrown;
+}
+.title-wallet{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: gainsboro;
+  padding: 5%;
+  color: black;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  margin-bottom: 3%;
+}
+.title-schema>h5{
+  position: absolute;
+  left: 0;
+  margin-left: 2%;
+}
+.button-schema-title{
+  position: absolute;
+  margin-right: 2%;
+
+}
+button:hover{
+  background-color: whitesmoke;
+  color: gray;
+}
+#refresh-schema, #refresh-request{
+  right: 0;
+}
+#create-schema{
+  right: 30%;
+}
+button {
+    padding: 5px 5px;
+    background: gray;
+    color: #fff;
+    border: none;
+    border: 0px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+
+
+table.dataTable thead .sorting:after,
+  table.dataTable thead .sorting:before,
+  table.dataTable thead .sorting_asc:after,
+  table.dataTable thead .sorting_asc:before,
+  table.dataTable thead .sorting_asc_disabled:after,
+  table.dataTable thead .sorting_asc_disabled:before,
+  table.dataTable thead .sorting_desc:after,
+  table.dataTable thead .sorting_desc:before,
+  table.dataTable thead .sorting_desc_disabled:after,
+  table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+  }

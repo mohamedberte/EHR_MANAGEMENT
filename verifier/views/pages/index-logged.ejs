@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../part/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../part/header-logged'); %>
+</header>
+
+<main class="main">
+    <div class="container">
+      <p>You are connected as : <b>
+      <% if (user) { %>
+        <%= user %>
+      <% } %>
+      </b>
+    </p>
+        <div class="row">
+          
+          <div class="col">
+                      <div class="title-schema">
+                        <h5> Schemas </h5>
+                        <button type="button" id='refresh-schema'class="button-schema-title"> Refresh </button>
+                      </div>
+                      <div id="table-wrapper">
+                        <div id="table-scroll">
+                        <table id="schema-table" class="table table-striped table-bordered table-sm" cellspacing="0"
+                        width="100%">
+                        <thead>
+                          <tr>
+                            <th class="th-sm">ID
+                            </th>
+                            <th class="th-sm">Nom
+                            </th>
+                            <th class="th-sm">Version
+                            </th>
+                            <th class="th-sm">Attributs
+                            </th>
+                            <th class="th-sm">Actions
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                        </tbody>
+                        </table>
+                      </div>
+                    </div>
+            </div>
+
+          <div class="col">
+            <div class="title-wallet">
+              <h5> Wallet Information </h5>
+              <p>Handler : <i id="wallet_handler"><% if (wallet) { %>
+                <%= wallet['wallet'] %>
+              <% } %> 
+              </i>
+            </p>
+
+              <p>DID : <i id="info_did"><% if (wallet) { %>
+                <%= wallet['did'] %>
+              <% } %> </i></p>
+
+              <p>Public Key : <i id= "info_verkey"><% if (wallet) { %>
+                <%= wallet['verkey'] %>
+              <% } %> </i></p>
+
+              <p>PoolHandler : <i id= "info_pool"><% if (wallet) { %>
+                <%= wallet['poolhandler'] %>
+              <% } %> </i></p>
+              
+            </div>
+          </div>
+
+
+          <div class="w-100"></div>
+
+          <div class="col">
+            <div class="title-schema">
+              <h5> Request Connection </h5>
+              <button type="button"  id='proof-request'class="button-schema-title"> New proof request </button>
+              <button type="button"  id='refresh-request'class="button-schema-title"> Refresh </button>
+
+            </div>
+            <div id="table-wrapper">
+              <div id="table-scroll">
+            <table id="request-table" class="table table-striped table-bordered table-sm" cellspacing="0"
+                        width="100%">
+                        <thead>
+                          <tr>
+                            <th class="th-sm">From
+                            </th>
+                            <th class="th-sm">Public Key
+                            </th>
+                            <th class="th-sm">Request
+                            </th>
+                            <th class="th-sm">Statut
+                            </th>
+                            <th class="th-sm">Action
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        </table>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+
+        </div>
+      </div>
+
+        
+    <!-- The Modal -->
+    <div id="create_schema_form" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h5> Reply to prover </h5>
+        <form id="schema-form">
+          <label for="tag_label">Exchange endpoint :</label><br>
+          <input type="text" id="s_server" name="s_server" disabled><br>
+
+          <label for="name_label"> Schema Name:</label><br>
+          <input type="text" id="s_name" name="s_name"><br>
+          <label for="v_label">Version :</label><br>
+          <input type="text" id="s_version" name="s_version" value="2.0"><br>
+
+          <label for="tag_label">Credential tag :</label><br>
+          <input type="text" id="s_tag" name="s_tag"><br>
+
+          <label for="sign_label">Signature type :</label><br>
+          <input type="text" id="s_signtype" name="s_signtype" value="CL"  disabled><br>
+
+          <label for="at_label">Number of attributs (1~100) :</label><br>
+          <input type="number" min="1" max="100" oninput="addInput()" id="at_number" name="at_number"><br>
+          <label for="val_label">Input attributs value :</label><br>
+          <div id="attr_box">
+
+
+          </div><br>
+
+          <button id="s_send" type="button"> Send </button>
+          <input type="reset">
+        </form>
+      </div>
+
+    </div>
+
+
+
+
+    <div id="at_requested" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="at_requested_close">&times;</span>
+        <h5> Fill Prover Credential : </h5>
+        <form id="schema-form">
+          <label for="tag_label"> Exchange server: </label><br>
+          <input type="text" id="at_requested_server" name="at_requested_server" disabled><br>
+
+          <label for="at_requested_name_label"> Prover Did:</label><br>
+          <input type="textarea" id="at_requested_did" name="at_requested_did" disabled><br>
+
+          <label for="at_requested_name_label"> Credential Offer:</label><br>
+          <input type="textarea" id="at_requested_s_offer" name="at_requested_s_offer" disabled><br>
+
+          <label for="at_requested_did_label"> Credential Request :</label><br>
+          <input type="textarea" id="at_requested_value" name="at_requested_value" disabled><br>
+
+          <label for="at_requested_did_label"> Credential Definition :</label><br>
+          <input type="textarea" id="at_requested_definition" name="at_requested_definition" disabled><br>
+
+          <label for="at_requested_did_label"> Credential Meta Data :</label><br>
+          <input type="textarea" id="at_requested_meta" name="at_requested_meta" disabled><br>
+
+          <label for="at_requested_label">Number of attributs :</label><br>
+          <input type="number" min="1" max="100" oninput="addInput_requested()" id="at_requested_number" name="at_requested_number"  disabled><br>
+          <label for="at_requested_val_label">Input attributs value :</label><br>
+          <div id="at_requested_attr_box">
+
+          </div><br>
+
+          <button id="at_requested_s_send" type="button"> Sign and send it </button>
+          <input type="reset">
+        </form>
+      </div>
+
+    </div>
+
+
+    <div id="proof_request" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="proof_request_close">&times;</span>
+        <h5> Proof request : </h5>
+        <form id="schema-form">
+          <label for="tag_label"> Exchange server: </label><br>
+          <input type="text" id="proof_request_server" name="proof_request_server" placeholder="Ex : http://localhost:3010/prover_server"><br>
+
+          <label for="proof_request_name_label"> Schema ID</label><br>
+          <input type="text" id="proof_request_schema" name="proof_request_schema">
+          <button id="proof_request_get_schema" type="button"> Get </button>
+          <input type="text" id="schema" name="schema" disabled>
+          <br>
+
+          <label for="proof_request_name_label"> Credential Id:</label><br>
+          <input type="text" id="proof_request_credential" name="proof_request_credential">
+          <br>
+
+          <label for="proof_request_label">Attributs request :</label><br>
+          <input type="number" min="1" max="100" oninput="addInput_proof()" id="proof_request_number" name="proof_request_number" disabled><br>
+          <label for="proof_request_val_label">attributs :</label><br>
+          <div id="proof_request_attr_box">
+
+          </div><br>
+
+          <button id="proof_request_send" type="button"> Send proof request </button>
+        </form>
+      </div>
+
+    </div>
+
+
+    <div id="proof" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="proof_close">&times;</span>
+        <h5> Verification of proof : </h5>
+        <form id="schema-form">
+          <label for="tag_label"> Proof data </label><br>
+          <textarea id="proof_data" rows="5" cols="40" readonly></textarea>
+
+          <label for="proof_name_label"> Attributs revealed :</label><br>
+          <textarea id="proof_attr" rows="5" cols="40" readonly></textarea>
+          <br>
+
+          <label for="proof_name_label"> Predicat revealed proof :</label><br>
+          <textarea id="proof_pred" rows="5" cols="40" readonly></textarea>
+          <br>
+
+          <button id="proof_verify" type="button"> Verify proof </button>
+        </form>
+      </div>
+
+    </div>
+
+</main>
+
+<footer>
+  <%- include('../part/footer'); %>
+</footer>
