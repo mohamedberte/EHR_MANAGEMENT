@@ -1,2 +1,2 @@
-# HealthBlock
-Implement a blockchain-based medical records management solution in which patients will have complete control over access to their private data, while making it easy to access that information when needed.
+# ELECTRONIC HEALTH RECORDS MANAGEMENT SYSTEM
+Le système de gestion des dossiers médicaux implémenté est une solution qui permet aux patients d'avoir le contrôle total sur leur identié ainsi que leurs attributs de santé tout en facilitant l'accès aux informations en cas de besoin.
