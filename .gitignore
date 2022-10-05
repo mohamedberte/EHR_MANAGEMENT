@@ -1,0 +1,5 @@
+./node-modules/
+./issuer/node-modules
+./verifier/node-modules
+./prover/node-modules
+./nodes/node-modules

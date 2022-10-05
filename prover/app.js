@@ -21,7 +21,7 @@ var session = require('express-session');
 
 // Mongodb connection url
 var mongoose = require('mongoose');
-var MONGODB_URI = "mongodb://127.0.0.1:27017/proverDb";
+var MONGODB_URI = "mongodb://127.0.0.1:27017/EHR2";
   
 // Connect to MongoDB
 mongoose.connect(MONGODB_URI);

@@ -236,7 +236,7 @@ router.post('/manage_credential',isLoggedIn, async function(req, res, next) {
                                                 req.body.signtype,
                                                 { support_revocation: false }
                                                 ); // without revocation
-            }
+            
             var credRequest = await indy.buildCredDefRequest(req.body.did, credDef);
             var resCredR = await indy.signAndSubmitRequest(req.body.pool, req.body.wallet, req.body.did, credRequest);
             console.log(resCredR);
@@ -255,6 +255,14 @@ router.post('/manage_credential',isLoggedIn, async function(req, res, next) {
             credDef : { 'id' : credDefId, 'value': credDef},
             credOffer : credentialOffer
             }));
+            }
+            else{
+                res.setHeader('Content-Type', 'application/json');
+                res.send(JSON.stringify({
+                data : response
+                }));
+
+            }
             break;
         case "CERTIFIED_CREDENTIAL":
             const tailsConfig = {

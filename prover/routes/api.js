@@ -291,8 +291,6 @@ router.post('/manage_credential',isLoggedIn, async function(req, res, next) {
  
                     var nbattr = req.body.data.proofReq.nb_attrReq;
                     var nbpred = req.body.data.proofReq.nb_predReq
-
-                    console.log(credentials.attrs['attr1_referent'][0]);
                     // Construction of proof request data format to create it
                     for(var i=0;i<nbattr; i++){
                         Object.assign(reqAttr, {['attr'+(i+1)+'_referent']: {
