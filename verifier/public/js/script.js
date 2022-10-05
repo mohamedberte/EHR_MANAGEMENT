@@ -87,7 +87,7 @@ btn_proof_request_send.addEventListener('click', async ()=>{
             if(pred != "" && val !=""){
               var attrName = document.getElementById("proof_request_att"+i).value
               try{
-                Object.assign(reqPred, {['attr'+(cpt_pred+1)+'_referent']: {
+                Object.assign(reqPred, {['predicate'+(cpt_pred+1)+'_referent']: {
                   name: attrName,
                   p_type: ">=",
                   p_value: parseInt(val),

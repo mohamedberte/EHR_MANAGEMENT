@@ -8,8 +8,8 @@ async function startPool(){
 
     var poolName = 'EHRPool';
     console.log(`Open Pool Ledger: ${poolName}`);
-    //var poolGenesisTxnPath = await util.getPoolGenesisTxnPath(poolName);
-    var poolGenesisTxnPath = '/home/indy'
+    var poolGenesisTxnPath = await util.getPoolGenesisTxnPath(poolName);
+    //var poolGenesisTxnPath = '/home/indy'
 
     var poolConfig = {
         "genesis_txn": poolGenesisTxnPath

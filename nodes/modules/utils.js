@@ -26,10 +26,13 @@ async function savePoolGenesisTxnFile(filePath) {
 async function mkdir(filePath) {
     return new Promise((resolve, reject) => {
         let folderPath = filePath.split('/').slice(0, filePath.split('/').length - 1).join('/');
-        mkdirp(folderPath, function(err, res) {
+        /*mkdirp(folderPath, function(err, res) {
             if(err) reject(err);
             else resolve(res);
-        })
+        })*/
+
+        // mkdir lunch for recent version
+        mkdirp(folderPath).catch(err => reject(err)).then(res => resolve(res))
     })
 }
 
