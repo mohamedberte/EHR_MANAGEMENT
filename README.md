@@ -28,35 +28,4 @@ L'architecture web mise en place utilise plusieurs technologies qui doivent imp√
 
 ## Usage
 
-```
-git clone https://github.com/TrustNetPK/trustnet-nodejs-sample.git
-cd trustnet-nodejs-sample
-npm install
-```
-
-
-*Run the agents in following order
-
-### To run verifier
-```
-cd trustnet-nodejs-sample/src
-node verifier.js
-```
-
-### To run prover
-```
-cd trustnet-nodejs-sample/src
-node prover.js
-```
-
-### To run issuer
-```
-cd trustnet-nodejs-sample/src
-node issuer.js
-```
-
-
-## Demo Video
-</hr>
-
-[![DEMO](https://img.youtube.com/vi/f9Apo_SO0Os/0.jpg)](https://www.youtube.com/watch?v=f9Apo_SO0Os)
+... Update coming soon
