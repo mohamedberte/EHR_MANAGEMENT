@@ -32,9 +32,7 @@ L'architecture web mise en place utilise plusieurs technologies qui doivent imp�
 La première étape est la phase d'initialisation du réseau Indy. Si cela n'est pas encore fait sur votre machine, alors vous devez suivre ces instructions ci-dessous :
 * D'abord vous  devez télécharger et installer le docker [(lien de téléchargement)](https://www.docker.com/)
 
-* Cloner le git indy-sdk sur votre  machine  [(Indy SDK)](https://github.com/hyperledger/indy-sdk)
-
-* Copier le fichier ci/ qui contien tous les fichiers de configuration du réseau indy dans votre dossier de projet
+* Cloner le projet git sur votre  machine : https://github.com/mohamedberte/EHR_MANAGEMENT/edit/main/README.md
 
 * Ouvrir le terminal à partir de votre dossier puis lancer la commande suivante pour être sur terminal linux :
 ```console
@@ -44,8 +42,15 @@ wsl
 * Puis lancer cette commande pour build le réseau indy sur le docker
 
 ```console
-docker build -f ci/indy-pool.dockerfile -t indy_pool_ehr . && docker run --name indy_pool_ehr -itd -p 9701-9708:9701-9708 indy_pool_ehr"
+npm run ledger:build
+npm run ledger:start
 ```
+Pour l'arrêter, il suffit de taper :
+
+```console
+npm run ledger:stop
+```
+
 
 ### Deuxième étapes
 Une fois que le réseau indy est lancé, nous pouvons maintenant lancer nos serveurs mais bien avant, nous allons installer les packages nécessaire pour le lancement de notre projet avec la commande suivante :
