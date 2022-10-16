@@ -1,4 +1,6 @@
 # ELECTRONIC HEALTH RECORDS MANAGEMENT SYSTEM
+### Version :
+* Branche releases 1.0.X [(Première version du projet)](https://github.com/mohamedberte/EHR_MANAGEMENT/tree/release/1.0.x)
 ## Objectif
 Le système de gestion des dossiers médicaux implémenté est une solution qui permet aux patients d'avoir le contrôle total sur leur identié ainsi que leurs attributs de santé tout en facilitant l'accès aux informations en cas de besoin.
 
