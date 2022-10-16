@@ -16,47 +16,70 @@ L'architecture web mise en place utilise plusieurs technologies qui doivent imp�
 - Prover avec l'adresse http//:localhost:3010
 - Verifier avec l'adresse http//:localhost:3020
 - Steward avec l'adresse http//:localhost:9000
+
 ![Credential Model](Docs/img/ARCHI_WEB_EHR.png)
 
 
-### Requirements
-* Python 2.7.16 (Exacty this version)
-* libindy built and setuped [(Instructions)](https://github.com/TrustNetPK/indy-env-setup) 
-* A locally running indy network on 127.0.0.1 [(Instructions)](https://github.com/TrustNetPK/indy-env-setup) 
-* Node 8.x or greater
+### Prérequis
+* Python 
+* Wsl avec la version Ubuntu ou directement sous linux
+* Indy network lancé au préalable avec le docker [(Instructions)](https://github.com/TrustNetPK/indy-env-setup) 
+* Node 8.x
 
+### Première étapes
+La première étape est la phase d'initialisation du réseau Indy. Si cela n'est pas encore fait sur votre machine, alors vous devez suivre ces instructions ci-dessous :
+* D'abord vous  devez télécharger et installer le docker [(lien de téléchargement)](https://www.docker.com/)
 
-## Usage
+* Cloner le git indy-sdk sur votre  machine  [(Indy SDK)](https://github.com/hyperledger/indy-sdk)
 
+* Copier le fichier ci/ qui contien tous les fichiers de configuration du réseau indy dans votre dossier de projet
+
+* Ouvrir le terminal à partir de votre dossier puis lancer la commande suivante pour être sur terminal linux :
+```console
+wsl
 ```
-git clone https://github.com/TrustNetPK/trustnet-nodejs-sample.git
-cd trustnet-nodejs-sample
+
+* Puis lancer cette commande pour build le réseau indy sur le docker
+
+```console
+docker build -f ci/indy-pool.dockerfile -t indy_pool_ehr . && docker run --name indy_pool_ehr -itd -p 9701-9708:9701-9708 indy_pool_ehr"
+```
+
+### Deuxième étapes
+Une fois que le réseau indy est lancé, nous pouvons maintenant lancer nos serveurs mais bien avant, nous allons installer les packages nécessaire pour le lancement de notre projet avec la commande suivante :
+
+```console
 npm install
 ```
-
-
-*Run the agents in following order
-
-### To run verifier
+Puis lancer les services MongoDB avec :
+```console
+sudo service mongodb start
 ```
-cd trustnet-nodejs-sample/src
-node verifier.js
+Et sur chaque terminal, nous allons lancer :
+* Pour le Steward :
+```console
+node nodes/app.js
+```
+* Pour le Issuer :
+```console
+node issuer/app.js
+```
+* Pour le Prover :
+```console
+node prover/app.js
+```
+* Pour le Verifier :
+```console
+node verifier/app.js
 ```
 
-### To run prover
-```
-cd trustnet-nodejs-sample/src
-node prover.js
-```
-
-### To run issuer
-```
-cd trustnet-nodejs-sample/src
-node issuer.js
-```
-
-
-## Demo Video
+## Vidéo de démonstration
+La vidéo de démonstration se trouce ci-dessous :
+<object width="425" height="350">
+  <param name="movie" value="#" />
+  <param name="wmode" value="transparent" />
+  <embed src="#"
+         type="application/x-shockwave-flash"
+         wmode="transparent" width="425" height="350" />
+</object>
 </hr>
-
-[![DEMO](https://img.youtube.com/vi/f9Apo_SO0Os/0.jpg)](https://www.youtube.com/watch?v=f9Apo_SO0Os)
