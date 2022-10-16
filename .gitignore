@@ -3,3 +3,4 @@
 ./verifier/node-modules
 ./prover/node-modules
 ./nodes/node-modules
+package-lock
