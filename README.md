@@ -80,7 +80,7 @@ node verifier/app.js
 ```
 
 ## Demo video
-The demonstration video is below:
+The demonstration video is below :
 <object width="425" height="350">
   <param name="movie" value="#" />
   <param name="wmode" value="transparent" />
