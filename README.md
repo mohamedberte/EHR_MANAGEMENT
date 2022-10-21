@@ -52,35 +52,35 @@ npm run ledger:stop
 
 
 ### Step 2
-Une fois que le réseau indy est lancé, nous pouvons maintenant lancer nos serveurs mais bien avant, nous allons installer les packages nécessaire pour le lancement de notre projet avec la commande suivante :
+Once the indy network is launched, we can now launch our servers but before that, we will install the packages necessary to launch our project with the following command:
 
 ```console
 npm install
 ```
-Puis lancer les services MongoDB avec :
+Then start the MongoDB services with :
 ```console
 sudo service mongodb start
 ```
-Et sur chaque terminal, nous allons lancer :
-* Pour le Steward :
+And on each terminal, we will run :
+* For Steward :
 ```console
 node nodes/app.js
 ```
-* Pour le Issuer :
+* For Issuer :
 ```console
 node issuer/app.js
 ```
-* Pour le Prover :
+* For Prover :
 ```console
 node prover/app.js
 ```
-* Pour le Verifier :
+* For Verifier :
 ```console
 node verifier/app.js
 ```
 
-## Vidéo de démonstration
-La vidéo de démonstration se trouce ci-dessous :
+## Demo video
+The demonstration video is below:
 <object width="425" height="350">
   <param name="movie" value="#" />
   <param name="wmode" value="transparent" />
