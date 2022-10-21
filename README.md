@@ -19,7 +19,7 @@ The web architecture uses several technologies that must be installed before bei
 - Verifier with http//:localhost:3020
 - Steward with http//:localhost:9000
 
-![Credential Model](Docs/img/ARCHI_WEB_EHR.png)
+![Credential Model](Docs/img/WEB_EHR.png)
 
 
 ### Requirements
