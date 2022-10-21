@@ -1,58 +1,57 @@
 # ELECTRONIC HEALTH RECORDS MANAGEMENT SYSTEM
 ### Version :
 * Branche releases 1.0.X [(Première version du projet)](https://github.com/mohamedberte/EHR_MANAGEMENT/tree/release/1.0.x)
-## Objectif
-Le système de gestion des dossiers médicaux implémenté est une solution qui permet aux patients d'avoir le contrôle total sur leur identié ainsi que leurs attributs de santé tout en facilitant l'accès aux informations en cas de besoin.
+## Objective
+The health record management system implemented is a solution that allows patients to have full control over their identity and health attributes while facilitating access to information when needed.
 
 ## Acteurs
-Le système de gestion des dossiers médicaux fait appel à 3 acteurs qui ont tous un rôle spécifique au niveau de des échanges. Nous avons le fournisseur de données appelé Issuer, le donneur de preuve appelé Prover et le vérificateur de 
-preuve appelé Verifie.
+The health record management system involves 3 actors who all have a specific role in the exchange. We have the data provider called Issuer, the evidence giver called Prover and the evidence verifier called 
+called Verifier.
 
 ![Credential Model](Docs/img/ACTOR.png)
 
 
 
 ## Architecture web
-L'architecture web mise en place utilise plusieurs technologies qui doivent impérativement être installé au préalable avant de pouvoir faire des manipulations. Elle est constituée de 4 services :
-- Issuer avec l'adresse http//:localhost:3000
-- Prover avec l'adresse http//:localhost:3010
-- Verifier avec l'adresse http//:localhost:3020
-- Steward avec l'adresse http//:localhost:9000
+The web architecture uses several technologies that must be installed before being able to make manipulations. It consists of 4 services:
+- Issuer with http//:localhost:3000
+- Prover with http//:localhost:3010
+- Verifier with http//:localhost:3020
+- Steward with http//:localhost:9000
 
 ![Credential Model](Docs/img/ARCHI_WEB_EHR.png)
 
 
-### Prérequis
+### Requirements
 * Python 
-* Wsl avec la version Ubuntu ou directement sous linux
+* Wsl with the Ubuntu version or directly under linux
 * Indy network lancé au préalable avec le docker [(Instructions)](https://github.com/TrustNetPK/indy-env-setup) 
 * Node 8.x
 
-### Première étapes
-La première étape est la phase d'initialisation du réseau Indy. Si cela n'est pas encore fait sur votre machine, alors vous devez suivre ces instructions ci-dessous :
-* D'abord vous  devez télécharger et installer le docker [(lien de téléchargement)](https://www.docker.com/)
+### Step 1
+The first step is the initialization phase of the Indy network. If this has not yet been done on your machine, you should follow these instructions below:
+* First you need to download and install the docker [(Download)](https://www.docker.com/)
 
-* Cloner le projet git sur votre  machine : https://github.com/mohamedberte/EHR_MANAGEMENT/edit/main/README.md
+* Clone the git project on your machine: https://github.com/mohamedberte/EHR_MANAGEMENT/edit/main/README.md
 
-* Ouvrir le terminal à partir de votre dossier puis lancer la commande suivante pour être sur terminal linux :
+* Open the terminal from your folder then run the following command to be on linux terminal :
 ```console
 wsl
 ```
 
-* Puis lancer cette commande pour build le réseau indy sur le docker
+* Then run this command to build the indy network on the docker
 
 ```console
 npm run ledger:build
 npm run ledger:start
 ```
-Pour l'arrêter, il suffit de taper :
-
+To stop it, just use this command :
 ```console
 npm run ledger:stop
 ```
 
 
-### Deuxième étapes
+### Step 2
 Une fois que le réseau indy est lancé, nous pouvons maintenant lancer nos serveurs mais bien avant, nous allons installer les packages nécessaire pour le lancement de notre projet avec la commande suivante :
 
 ```console
