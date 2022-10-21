@@ -8,7 +8,7 @@ The health record management system implemented is a solution that allows patien
 The health record management system involves 3 actors who all have a specific role in the exchange. We have the data provider called Issuer, the evidence giver called Prover and the evidence verifier called 
 called Verifier.
 
-![Credential Model](Docs/img/ACTOR.png)
+![Credential Model](Docs/img/ACTOR_.png)
 
 
 
