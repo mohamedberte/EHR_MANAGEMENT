@@ -1,5 +1,5 @@
 # ELECTRONIC HEALTH RECORDS MANAGEMENT SYSTEM
-### Version :
+### Version
 * Branche releases 1.0.X [(first version release)](https://github.com/mohamedberte/EHR_MANAGEMENT/tree/release/1.0.x)
 ## Objective
 The health record management system implemented is a solution that allows patients to have full control over their identity and health attributes while facilitating access to information when needed.
@@ -80,7 +80,7 @@ node verifier/app.js
 ```
 
 ## Demo video
-The demonstration video is below :
+The demonstration video is below
 <object width="425" height="350">
   <param name="movie" value="#" />
   <param name="wmode" value="transparent" />
