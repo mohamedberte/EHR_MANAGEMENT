@@ -12,7 +12,7 @@ called Verifier.
 
 
 
-## Architecture web
+## Web architecture
 The web architecture uses several technologies that must be installed before being able to make manipulations. It consists of 4 services:
 - Issuer with http//:localhost:3000
 - Prover with http//:localhost:3010
