@@ -14,10 +14,10 @@ called Verifier.
 
 ## Web architecture
 The web architecture uses several technologies that must be installed before being able to make manipulations. It consists of 4 services:
-- Issuer with http//:localhost:3000
-- Prover with http//:localhost:3010
-- Verifier with http//:localhost:3020
-- Steward with http//:localhost:9000
+- Issuer with http://localhost:3000 have communication adress http://localhost:3000/issuer_server
+- Prover with http://localhost:3010 have communication adress http://localhost:3000/prover_server
+- Verifier with http://localhost:3020 have communication adress http://localhost:3000/verifier_server
+- Steward with http://localhost:9000
 
 ![Credential Model](Docs/img/WEB_EHR.png)
 
