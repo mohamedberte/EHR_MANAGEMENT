@@ -10,7 +10,11 @@ called Verifier.
 
 ![Credential Model](Docs/img/ACTOR.png)
 
-
+Les différents rôles au niveau de la blockchain indy sont : 
+* Trust Anchor: c'est l'entité qui est responsable de la création et de la gestion des identités numériques sur la plateforme. Il peut également être chargé de vérifier et de certifier les informations d'identité des utilisateurs.
+* Steward: c'est l'entité qui gère et administre les identités numériques sur la plateforme. Il peut aider les utilisateurs à créer des identités et à gérer leurs informations d'identité.
+* Monitor: c'est l'entité qui surveille l'utilisation de la plateforme et s'assure que toutes les transactions sont valides et conformes aux règles établies.
+* Endorser: c'est l'entité qui approuve les transactions et les mises à jour d'identité sur la plateforme. Il peut être utilisé pour s'assurer que toutes les transactions sont conformes aux politiques de sécurité et de confidentialité établies.
 
 ## Web architecture
 The web architecture uses several technologies that must be installed before being able to make manipulations. It consists of 4 services:
